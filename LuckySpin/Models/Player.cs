@@ -8,6 +8,6 @@ namespace LuckySpin.Models
     public class Player
     {
         string name = "";
-        int luckyNum;
+        int luckyNum; 
     }
 }
