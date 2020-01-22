@@ -30,14 +30,16 @@ namespace LuckySpin.Controllers
          * Spin Action
          **/  
         [HttpGet]
-        public IActionResult SpinIt(Player player) //TODO: Prepare this method to receive a Player
+        public IActionResult SpinIt(Player player) 
         {
             //Load up a Spin object with data
             Spin spin = new Spin();
-            spin.Luck = player.luckyNum; //TODO: Edit this to assign Player's lucky number to spin.Luck
+            spin.Luck = player.luckyNum; 
             spin.A = random.Next(1, 10);
             spin.B = random.Next(1, 10);
             spin.C = random.Next(1, 10);
+
+            ViewBag.pName = player.playerName; // Added this to allow access in the SpinIt View
 
             // Test to see if a winner
             if (spin.A == spin.Luck || spin.B == spin.Luck || spin.C == spin.Luck)
